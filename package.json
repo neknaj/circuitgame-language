@@ -1,0 +1,25 @@
+{
+  "name": "neknaj-circuit-game-language",
+  "displayName": "Neknaj Circuit Game Language",
+  "description": "Provides syntax highlighting for the Neknaj Circuit Game Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ncgl",
+      "aliases": ["Neknaj Circuit Game Language", "ncgl"],
+      "extensions": [".ncg"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ncgl",
+      "scopeName": "source.ncgl",
+      "path": "./syntaxes/ncgl.tmLanguage.json"
+    }]
+  }
+}

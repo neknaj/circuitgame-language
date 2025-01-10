@@ -1,0 +1,117 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Neknaj Circuit Game Language",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#module"
+		},
+		{
+			"include": "#test"
+		},
+		{
+			"include": "#using"
+		},
+		{
+			"begin": "\\{",
+			"end": "\\}",
+			"patterns": [
+				{
+					"include": "#gate"
+				}
+			]
+		}
+	],
+	"repository": {
+		"comment": {
+			"patterns": [
+				{
+					"match": "//.*$",
+					"name": "comment.line.double-slash.ncgl"
+				}
+			]
+		},
+		"module": {
+			"patterns": [
+				{
+					"match": "(module)\\s*([a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.ncgl"
+						},
+						"2": {
+							"name": "entity.name.function.ncgl"
+						}
+					}
+				},
+				{
+					"begin": "\\(",
+					"end": "\\)",
+					"patterns": [
+						{
+							"match": "[a-zA-Z0-9_]+",
+							"name": "variable.name.ncgl"
+						}
+					]
+				}
+			]
+		},
+		"test": {
+			"match": "(test)\\s*([a-zA-Z0-9_]+)\\s*:\\s*([0-9]+)\\s*(->|=>|~>|>)\\s*([0-9]+)",
+			"captures": {
+				"1": {
+					"name": "keyword.control.ncgl"
+				},
+				"2": {
+					"name": "entity.name.function.ncgl"
+				},
+				"3": {
+					"name": "constant.numeric"
+				},
+				"5": {
+					"name": "constant.numeric"
+				}
+			}
+		},
+		"using": {
+			"match": "(using)\\s*([a-zA-Z0-9_]*)\\s*:\\s*([0-9]+)\\s*(->|=>|~>|>)\\s*([0-9]+)",
+			"captures": {
+				"1": {
+					"name": "keyword.control.ncgl"
+				},
+				"2": {
+					"name": "entity.name.function.ncgl"
+				},
+				"3": {
+					"name": "constant.numeric"
+				},
+				"5": {
+					"name": "constant.numeric"
+				}
+			}
+		},
+		"gate": {
+			"patterns": [
+				{
+					"match": ":\\s*([a-zA-Z0-9_]+)",
+					"captures": {
+						"1": {
+							"name": "entity.name.function.ncgl"
+						}
+					}
+				},
+				{
+					"match": "([a-zA-Z0-9_]+)",
+					"captures": {
+						"1": {
+							"name": "variable.name.ncgl"
+						}
+					}
+				}
+			]
+		}
+	},
+	"scopeName": "source.ncgl"
+}
