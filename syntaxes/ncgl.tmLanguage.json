@@ -20,6 +20,9 @@
 			"patterns": [
 				{
 					"include": "#gate"
+				},
+				{
+					"include": "#comment"
 				}
 			]
 		}
