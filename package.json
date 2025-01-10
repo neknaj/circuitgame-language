@@ -2,6 +2,9 @@
   "name": "neknaj-circuit-game-language",
   "displayName": "Neknaj Circuit Game Language",
   "description": "Provides syntax highlighting for the Neknaj Circuit Game Language",
+  "repository": {
+    "url": "https://github.com/neknaj/circuitgame-language.git"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
