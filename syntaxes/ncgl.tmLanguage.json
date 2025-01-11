@@ -39,7 +39,7 @@
 		"module": {
 			"patterns": [
 				{
-					"match": "(module|Module|MODULE|def|Def|DEF)\\s*([a-zA-Z0-9_]*)",
+					"match": "(func|Func|FUNC|fn|Fn|FN|module|Module|MODULE|def|Def|DEF)\\s*([a-zA-Z0-9_]*)",
 					"captures": {
 						"1": {
 							"name": "keyword.control.ncgl"
