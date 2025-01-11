@@ -5,9 +5,9 @@
   "repository": {
     "url": "https://github.com/neknaj/circuitgame-language.git"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.90.0"
   },
   "categories": [
     "Programming Languages"

@@ -39,7 +39,7 @@
 		"module": {
 			"patterns": [
 				{
-					"match": "(module)\\s*([a-zA-Z0-9_]*)",
+					"match": "(module|Module|MODULE|def|Def|DEF)\\s*([a-zA-Z0-9_]*)",
 					"captures": {
 						"1": {
 							"name": "keyword.control.ncgl"
@@ -62,7 +62,7 @@
 			]
 		},
 		"test": {
-			"match": "(test)\\s*([a-zA-Z0-9_]+)\\s*:\\s*([0-9]+)\\s*(->|=>|~>|>)\\s*([0-9]+)",
+			"match": "(test|Test|TEST)\\s*([a-zA-Z0-9_]+)\\s*:\\s*([0-9]+)\\s*(->|=>|~>|>)\\s*([0-9]+)",
 			"captures": {
 				"1": {
 					"name": "keyword.control.ncgl"
@@ -79,7 +79,7 @@
 			}
 		},
 		"using": {
-			"match": "(using)\\s*([a-zA-Z0-9_]*)\\s*:\\s*([0-9]+)\\s*(->|=>|~>|>)\\s*([0-9]+)",
+			"match": "(using|Using|USING|use|Use|USE)\\s*([a-zA-Z0-9_]*)\\s*:\\s*([0-9]+)\\s*(->|=>|~>|>)\\s*([0-9]+)",
 			"captures": {
 				"1": {
 					"name": "keyword.control.ncgl"
@@ -98,9 +98,9 @@
 		"gate": {
 			"patterns": [
 				{
-					"match": ":\\s*([a-zA-Z0-9_]+)",
+					"match": "(:|=|:=|::=)\\s*([a-zA-Z0-9_]+)",
 					"captures": {
-						"1": {
+						"2": {
 							"name": "entity.name.function.ncgl"
 						}
 					}
