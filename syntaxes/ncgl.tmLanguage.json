@@ -33,6 +33,10 @@
 				{
 					"match": "//.*$",
 					"name": "comment.line.double-slash.ncgl"
+				},
+				{
+					"match": "#.*$",
+					"name": "comment.line.number-sign.ncgl"
 				}
 			]
 		},
