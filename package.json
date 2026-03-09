@@ -1,0 +1,72 @@
+{
+  "name": "circuit-game-language",
+  "displayName": "Circuit Game Language",
+  "description": "Language support for .ncg files in VS Code.",
+  "version": "0.0.4",
+  "publisher": "neknaj",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neknaj/circuitgame-language.git"
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "extensionKind": [
+    "workspace"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:ncg"
+  ],
+  "main": "out/client/extension.js",
+  "files": [
+    "out/**",
+    "syntaxes/**",
+    "language-configuration.json",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ncg",
+        "aliases": [
+          "NCG",
+          "ncg"
+        ],
+        "extensions": [
+          ".ncg"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ncg",
+        "scopeName": "source.ncg",
+        "path": "./syntaxes/ncg.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "check": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "vscode:prepublish": "npm run build",
+    "package": "npm run build && npx @vscode/vsce package --no-dependencies --out circuit-game-language.vsix"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^3.7.1",
+    "esbuild": "^0.25.10",
+    "typescript": "^5.7.3"
+  }
+}
